@@ -1,9 +1,9 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
-import config from '../lib/config';
+import config from './lib/config';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import cors from 'cors';
-
+import router from './routes';
 
 const app: Application = express();
 app.use(express.urlencoded({extended: true, limit: '50mb'})); //middleware
@@ -33,7 +33,9 @@ app.use((err: error, req: Request, res: Response, next: NextFunction) => {
 });
 
 app.get('/', (req: Request, res: Response) => {
-    res.send('hola mundo')
+    res.send('hola typescript')
 });
+
+app.use('/api', router);
 
 export default app;
