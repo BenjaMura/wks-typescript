@@ -14,7 +14,7 @@ function App(props: AppProps) {
       {props.users.map((user: User) => {
         return (
           <div key={user.id}>
-            {user.id} {user.name}
+            {user.id}) {user.name} {user.lastName}
           </div>
         );
       })}

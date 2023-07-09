@@ -2,7 +2,7 @@ import axios from "axios";
 import { Dispatch } from "redux";
 import { ActionTypes } from "./types";
 
-const url = "https://localhost:3001/user";
+const url = "http://localhost:3001/api/user";
 
 export interface User {
   id: number;
